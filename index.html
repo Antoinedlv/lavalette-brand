@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVALETTE CARAMEL - Official Brand Dossier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF9F6;
+            --gold: #C5A059;
+            --dark-bronze: #2C2C2C;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark-bronze);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background-color: var(--white);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .logo-container { 
+            max-width: 300px; 
+            margin: 0 auto 20px auto;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slogan { 
+            font-style: italic; 
+            color: var(--gold); 
+            font-size: 1.2rem; 
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section { padding: 60px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.1); }
+        .centered { text-align: center; }
+
+        .gold-divider {
+            width: 50px; height: 2px; background-color: var(--gold); margin: 20px auto;
+        }
+
+        .product-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-top: 40px;
+        }
+
+        .product-image img {
+            width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .specs-list { list-style: none; margin: 20px 0; }
+        .specs-list li {
+            padding: 8px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;
+        }
+
+        .highlight { color: var(--gold); font-weight: 600; }
+
+        table {
+            width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--white);
+        }
+
+        th, td {
+            padding: 15px; text-align: left; border: 1px solid #f0f0f0; font-size: 0.9rem;
+        }
+
+        th { background-color: var(--cream); color: var(--gold); width: 40%; }
+
+        .tech-box {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .ingredients-text { font-size: 0.85rem; color: #555; text-align: justify; }
+
+        footer {
+            text-align: center; padding: 60px 0; background-color: var(--dark-bronze); color: var(--white);
+        }
+
+        .contact-btn {
+            display: inline-block; padding: 15px 40px; background-color: var(--gold); color: var(--white);
+            text-decoration: none; margin-top: 20px; letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) { 
+            .product-grid, .tech-box { grid-template-columns: 1fr; } 
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="LAVALETTE CARAMEL Logo">
+    </div>
+    <p class="slogan">French Craftsmanship at the Service of Pleasure</p>
+</header>
+
+<div class="container">
+    
+    <section class="section centered">
+        <h2>The Lavalette Vision</h2>
+        <div class="gold-divider"></div>
+        <p style="max-width: 700px; margin: 0 auto; text-align: justify;">
+            <strong>Lavalette Caramel</strong> is setting a new standard for exceptional salted butter caramel. Our gourmet recipe is crafted without any food coloring or preservatives. By combining traditional French expertise with high-quality ingredients, we provide professionals with a rich, silken texture that reveals deep buttery notes enhanced by authentic Guérande salt.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2 class="centered">The Professional Selection</h2>
+        <div class="gold-divider"></div>
+        
+        <div class="product-grid">
+            <div class="product-image">
+                <img src="pot2.png" alt="Lavalette Salted Butter Caramel 10kg">
+            </div>
+            <div>
+                <h3>Salted Butter Caramel - 210g</h3>
+                <p>Designed for premium pastry shops, chocolatiers, and fine dining, our bulk format ensures both quality and consistency for large-scale creations.</p>
+                <ul class="specs-list">
+                    <li><span>Format</span> <span class="highlight">210g jar</span></li>
+                    <li><span>Agricultural Content</span> <span class="highlight">92,41%</span></li>
+                    <li><span>Shelf Life (DDM)</span> <span class="highlight">365 Days</span></li>
+                </ul>
+                <table>
+                    <tr><th>Professional Price</th><td class="highlight">€4,90 (Net EXW) </td></tr>
+                    <tr><th>Usage</th><td>Ready-to-use for all Pleasure</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="gold-divider" style="margin: 60px auto; opacity: 0.2;"></div>
+
+        <div class="product-grid">
+            <div class="product-image">
+                <img src="bucket.png" alt="Second Professional Product 10kg">
+            </div>
+            <div>
+                <h3>Second Product Title - 10kg</h3>
+                <p>Describe here the unique characteristics of your second professional product, its specific application, or its flavor profile for culinary experts.</p>
+                <ul class="specs-list">
+                    <li><span>Format</span> <span class="highlight">10kg Bucket</span></li>
+                    <li><span>Agricultural Content</span> <span class="highlight">92,41%</span></li>
+                    <li><span>Shelf Life (DDM)</span> <span class="highlight">180 Days</span></li>
+                </ul>
+                <table>
+                    <tr><th>Professional Price</th><td class="highlight">€101.13 (Net EXW) - 10.12/KG</td></tr>
+                    <tr><th>Usage</th><td>Ready-to-use for professional kitchens</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="centered">Technical Specifications</h2>
+        <div class="gold-divider"></div>
+        <div class="tech-box">
+            <div>
+                <h3>Ingredients</h3>
+                <p class="ingredients-text">
+                    Sugar, cream, water, <strong>BUTTER</strong> (2.4%), Guérande salt (1.2%). <br><br>
+                    <em>Allergen Info: Contains MILK products (butter, cream). May contain traces of gluten (wheat).</em>
+                </p>
+            </div>
+            <div>
+                <h3>Nutrition (per 100g)</h3>
+                <table style="margin-top: 0; font-size: 0.8rem;">
+                    <tr><td>Energy</td><td>346 kcal / 1450 kJ</td></tr>
+                    <tr><td>Fat</td><td>14.0g (saturates: 10.0g)</td></tr>
+                    <tr><td>Carbohydrates</td><td>54.0g (sugars: 52.0g)</td></tr>
+                    <tr><td>Proteins</td><td>0.8g</td></tr>
+                    <tr><td>Salt</td><td>1.00g</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="centered">Partnership Terms 2026</h2>
+        <div class="gold-divider"></div>
+        <table>
+            <tr>
+                <th>Logistics</th>
+                <td>
+                    • Lead time: 8 business days.<br>
+                    • Quality claims must be filed upon receipt with clear evidence on transport documents.
+                </td>
+            </tr>
+            <tr>
+                <th>Payment & Pricing</th>
+                <td>
+                    • First Order: 100% Pro-forma payment required before shipping.<br>
+                    • Recurring Clients: 50% deposit at order / 50% upon receipt.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+</div>
+
+<footer>
+    <h2>Ready to partner?</h2>
+    <a href="mailto:lavalette.caramel@gmail.com" class="contact-btn">EMAIL US: lavalette.caramel@gmail.com</a>
+    <p style="margin-top: 15px;">+33 (0)7 68 78 11 10</p>
+    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">ZA de la Bourdinière - 5, rue du Verger - 22120 YFFINIAC, FRANCE</p>
+</footer>
+
+</body>
+</html>
