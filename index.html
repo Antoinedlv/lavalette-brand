@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAVALETTE CARAMEL - Official Brand Dossier</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Lavalette Caramel | Cadeaux d'Affaires & Caramel Artisanal</title>
+    <meta name="description" content="Caramel au beurre salé artisanal français pour séminaires et cadeaux d'affaires sur-mesure. Personnalisation dès 100 unités.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --cream: #FAF9F6;
             --gold: #C5A059;
+            --gold-hover: #AF8B45;
             --dark-bronze: #2C2C2C;
             --white: #FFFFFF;
         }
@@ -22,40 +27,112 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        /* Top Bar Langue */
+        .top-bar {
+            background-color: var(--dark-bronze);
+            color: var(--white);
+            font-size: 0.8rem;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            letter-spacing: 1px;
+        }
 
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            opacity: 0.6;
+            transition: opacity 0.2s, color 0.2s;
+        }
+
+        .lang-switch button.active, .lang-switch button:hover {
+            opacity: 1;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Header */
         header {
             text-align: center;
-            padding: 60px 0;
+            padding: 50px 20px 30px;
             background-color: var(--white);
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
 
         .logo-container { 
-            max-width: 300px; 
-            margin: 0 auto 20px auto;
+            max-width: 280px; 
+            margin: 0 auto 15px auto;
         }
         
         .logo-container img {
             width: 100%;
             height: auto;
+            display: block;
         }
 
         .slogan { 
             font-style: italic; 
             color: var(--gold); 
-            font-size: 1.2rem; 
+            font-size: 1.15rem; 
             font-family: 'Playfair Display', serif;
         }
 
-        .section { padding: 60px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.1); }
+        /* Barre d'onglets */
+        .nav-switch-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .nav-switch {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 18px 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            color: #777;
+            border-bottom: 3px solid transparent;
+            transition: all 0.25s ease;
+        }
+
+        .tab-btn:hover { color: var(--dark-bronze); }
+
+        .tab-btn.active {
+            color: var(--dark-bronze);
+            border-bottom: 3px solid var(--gold);
+            background-color: rgba(197, 160, 89, 0.05);
+        }
+
+        /* Contenu & Grilles */
+        .container { max-width: 1050px; margin: 0 auto; padding: 40px 20px; }
+        .section { padding: 60px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.15); }
         .centered { text-align: center; }
 
         .gold-divider {
@@ -63,167 +140,494 @@
         }
 
         .product-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-top: 40px;
+            display: grid; 
+            grid-template-columns: 1fr 1.1fr; 
+            gap: 50px; 
+            align-items: center; 
+            margin-top: 40px;
         }
 
         .product-image img {
-            width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 100%; 
+            border-radius: 4px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            display: block;
         }
 
-        .specs-list { list-style: none; margin: 20px 0; }
+        .badge {
+            display: inline-block;
+            background-color: rgba(197, 160, 89, 0.15);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .specs-list { list-style: none; margin: 25px 0; }
         .specs-list li {
-            padding: 8px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;
+            padding: 10px 0; 
+            border-bottom: 1px solid #EBEBEB; 
+            display: flex; 
+            justify-content: space-between;
+            font-size: 0.95rem;
         }
 
         .highlight { color: var(--gold); font-weight: 600; }
 
         table {
-            width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--white);
+            width: 100%; border-collapse: collapse; margin-top: 25px; background: var(--white);
         }
 
         th, td {
-            padding: 15px; text-align: left; border: 1px solid #f0f0f0; font-size: 0.9rem;
+            padding: 16px; text-align: left; border: 1px solid #ECECEC; font-size: 0.9rem;
         }
 
-        th { background-color: var(--cream); color: var(--gold); width: 40%; }
+        th { background-color: var(--cream); color: var(--gold); width: 35%; font-weight: 600; }
 
         .tech-box {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 30px;
+            gap: 40px;
             margin-top: 30px;
         }
-        .ingredients-text { font-size: 0.85rem; color: #555; text-align: justify; }
+        .ingredients-text { font-size: 0.9rem; color: #555; text-align: justify; }
 
-        footer {
-            text-align: center; padding: 60px 0; background-color: var(--dark-bronze); color: var(--white);
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 35px;
         }
 
-        .contact-btn {
-            display: inline-block; padding: 15px 40px; background-color: var(--gold); color: var(--white);
-            text-decoration: none; margin-top: 20px; letter-spacing: 1px;
+        .pillar-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            text-align: center;
+        }
+
+        .pillar-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .pillar-card p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Boutons d'action */
+        .btn-primary {
+            display: inline-block; 
+            padding: 16px 36px; 
+            background-color: var(--gold); 
+            color: var(--white);
+            text-decoration: none; 
+            margin-top: 25px; 
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover { background-color: var(--gold-hover); }
+
+        footer {
+            text-align: center; 
+            padding: 60px 20px; 
+            background-color: var(--dark-bronze); 
+            color: var(--white);
+        }
+
+        footer h2 { color: var(--white); margin-bottom: 10px; }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) { 
-            .product-grid, .tech-box { grid-template-columns: 1fr; } 
+            .product-grid, .tech-box, .pillar-grid { grid-template-columns: 1fr; gap: 30px; }
+            .tab-btn { font-size: 0.75rem; padding: 14px 6px; }
         }
     </style>
 </head>
 <body>
 
+<div class="top-bar">
+    <div class="lang-switch">
+        <span data-i18n="langLabel">Langue :</span>
+        <button id="btn-fr" class="active" onclick="setLanguage('fr')">FR</button>
+        <span>|</span>
+        <button id="btn-en" onclick="setLanguage('en')">EN</button>
+    </div>
+</div>
+
 <header>
     <div class="logo-container">
-        <img src="logo2.png" alt="LAVALETTE CARAMEL Logo">
+        <img src="logo2.png" alt="Lavalette Caramel">
     </div>
-    <p class="slogan">French Craftsmanship at the Service of Pleasure</p>
+    <p class="slogan" data-i18n="slogan">L'Artisanat Français au Service de l'Excellence</p>
 </header>
 
-<div class="container">
-    
-    <section class="section centered">
-        <h2>The Lavalette Vision</h2>
-        <div class="gold-divider"></div>
-        <p style="max-width: 700px; margin: 0 auto; text-align: justify;">
-            <strong>Lavalette Caramel</strong> is setting a new standard for exceptional salted butter caramel. Our gourmet recipe is crafted without any food coloring or preservatives. By combining traditional French expertise with high-quality ingredients, we provide professionals with a rich, silken texture that reveals deep buttery notes enhanced by authentic Guérande salt.
-        </p>
-    </section>
+<nav class="nav-switch-wrapper" aria-label="Navigation principale">
+    <div class="nav-switch">
+        <button class="tab-btn active" id="tab-custom-btn" onclick="openTab('custom')" data-i18n="navCustom">
+            Cadeaux d'Affaires et Sur-Mesure
+        </button>
+        <button class="tab-btn" id="tab-wholesale-btn" onclick="openTab('wholesale')" data-i18n="navWholesale">
+            Gamme Distribution Lavalette
+        </button>
+    </div>
+</nav>
 
-    <section class="section">
-        <h2 class="centered">The Professional Selection</h2>
-        <div class="gold-divider"></div>
+<main class="container">
+
+    <!-- ONGLET 1 : PERSONNALISATION (PAR DÉFAUT) -->
+    <div id="tab-custom" class="tab-content active">
         
-        <div class="product-grid">
-            <div class="product-image">
-                <img src="pot2.png" alt="Lavalette Salted Butter Caramel 10kg">
-            </div>
-            <div>
-                <h3>Salted Butter Caramel - 210g</h3>
-                <p>Designed for premium pastry shops, chocolatiers, and fine dining, our bulk format ensures both quality and consistency for large-scale creations.</p>
-                <ul class="specs-list">
-                    <li><span>Format</span> <span class="highlight">210g jar</span></li>
-                    <li><span>Agricultural Content</span> <span class="highlight">92,41%</span></li>
-                    <li><span>Shelf Life (DDM)</span> <span class="highlight">365 Days</span></li>
-                </ul>
-                <table>
-                    <tr><th>Usage</th><td>Ready-to-use for all Pleasure</td></tr>
-                </table>
-            </div>
-        </div>
+        <section class="section centered" style="padding-top: 20px;">
+            <span class="badge" data-i18n="customBadge">Marque Blanche et Événements</span>
+            <h1 data-i18n="customTitle">Le Cadeau d'Entreprise Signé à Votre Image</h1>
+            <div class="gold-divider"></div>
+            <p style="max-width: 750px; margin: 0 auto; font-size: 1.05rem; color: #444;" data-i18n="customDesc">
+                Marquez les esprits de vos clients, partenaires et collaborateurs avec une attention gastronomique raffinée. Nous façonnons nos pots de caramel au beurre salé artisanal sous l'effigie et l'identité visuelle de votre entreprise.
+            </p>
+        </section>
 
-        <div class="gold-divider" style="margin: 60px auto; opacity: 0.2;"></div>
+        <section class="section" style="border-bottom: none;">
+            <div class="product-grid">
+                <div class="product-image">
+                    <img src="pot2.png" alt="Pot de caramel personnalisable">
+                </div>
+                <div>
+                    <span class="badge" data-i18n="customProdBadge">Édition Personnalisée</span>
+                    <h2 data-i18n="customProdTitle">Pot Artisanal 210g Personnalisé</h2>
+                    <p style="margin-top: 15px; color: #555;" data-i18n="customProdText">
+                        Idéal pour vos séminaires, assemblées générales, coffrets de fin d'année ou cadeaux de fidélisation. L'étiquetage frontal est intégralement adapté avec votre logo, charte graphique et mot personnalisé.
+                    </p>
 
-        <div class="product-grid">
-            <div class="product-image">
-                <img src="sceaux.png" alt="Second Professional Product 10kg">
-            </div>
-            <div>
-                <h3>salted butter caramel filling - 10kg</h3>
-                <p>Designed specifically to resemble a filling: the perfect texture for chocolate fillings, poaching in fine pastry, and inserts.</p>
-                <ul class="specs-list">
-                    <li><span>Format</span> <span class="highlight">10kg Bucket</span></li>
-                    <li><span>Agricultural Content</span> <span class="highlight">92,41%</span></li>
-                    <li><span>Shelf Life (DDM)</span> <span class="highlight">180 Days</span></li>
-                </ul>
-                <table>
-                    <tr><th>Usage</th><td>Ready-to-use for professional kitchens</td></tr>
-                </table>
-            </div>
-        </div>
-    </section>
+                    <ul class="specs-list">
+                        <li><span data-i18n="specFormatLabel">Contenance</span> <span class="highlight" data-i18n="specFormatVal">Pot en verre 210g</span></li>
+                        <li><span data-i18n="specRecipeLabel">Recette</span> <span class="highlight" data-i18n="specRecipeVal">Beurre et Fleur de Sel de Guérande</span></li>
+                        <li><span data-i18n="specDdmLabel">Conservation (DDM)</span> <span class="highlight" data-i18n="specDdmVal">365 Jours</span></li>
+                        <li><span data-i18n="specMoqLabel">Commande minimale (MOQ)</span> <span class="highlight" data-i18n="specMoqVal">100 pots</span></li>
+                    </ul>
 
+                    <div style="margin-top: 25px;">
+                        <a id="customQuoteBtn" href="mailto:lavalette.caramel@gmail.com?subject=Demande%20de%20devis%20-%20Pots%20Personnalis%C3%A9s&body=Bonjour%20Maison%20Lavalette%2C%0A%0ANous%20souhaitons%20obtenir%20un%20devis%20pour%20des%20pots%20de%20caramel%20personnalis%C3%A9s%20%3A%0A%0A-%20Nom%20de%20l'entreprise%20%3A%0A-%20Quantit%C3%A9%20estim%C3%A9e%20(min.%20100)%20%3A%0A-%20Date%20souhait%C3%A9e%20de%20livraison%20%2F%20%C3%89v%C3%A9nement%20%3A%0A-%20Coordonn%C3%A9es%20de%20contact%20%3A%0A%0AMerci%20!" class="btn-primary" data-i18n="customCta">
+                            Demander un devis sur-mesure
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="centered" data-i18n="customWhyTitle">Pourquoi Choisir Lavalette Pour Vos Événements ?</h3>
+            <div class="gold-divider"></div>
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <h4 data-i18n="pillar1Title">Artisanat Véritable</h4>
+                    <p data-i18n="pillar1Desc">Une recette gastronomique bretonne pure, sans conservateur ni colorant. Une signature gustative authentique.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4 data-i18n="pillar2Title">Prestige et Image</h4>
+                    <p data-i18n="pillar2Desc">Un contenant élégant en verre qui valorise l'image de votre société lors de vos remises de prix et séminaires.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4 data-i18n="pillar3Title">Accompagnement Graphique</h4>
+                    <p data-i18n="pillar3Desc">Validation personnalisée de votre BAT étiquette pour un rendu visuel impeccable à vos couleurs.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ONGLET 2 : GAMME DISTRIBUTION -->
+    <div id="tab-wholesale" class="tab-content">
+        
+        <section class="section centered" style="padding-top: 20px;">
+            <span class="badge" data-i18n="wsVisionBadge">Offre Professionnelle</span>
+            <h2 data-i18n="wsVisionTitle">La Vision Lavalette</h2>
+            <div class="gold-divider"></div>
+            <p style="max-width: 750px; margin: 0 auto; text-align: justify;" data-i18n="wsVisionDesc">
+                <strong>Lavalette Caramel</strong> redéfinit le standard d'excellence du caramel au beurre salé. Notre recette gastronomique est élaborée dans le respect du savoir-faire français, sans colorant ni conservateur, sublimée par l'authenticité de la fleur de sel de Guérande.
+            </p>
+        </section>
+
+        <section class="section">
+            <!-- TITRE NETTOYÉ SANS BIGOUDI (&) -->
+            <h2 class="centered" data-i18n="wsCatalogTitle">Sélection Distribution et Métiers de Bouche</h2>
+            <div class="gold-divider"></div>
+            
+            <!-- Format Pot 210g -->
+            <div class="product-grid">
+                <div class="product-image">
+                    <img src="pot2.png" alt="Pot Caramel au Beurre Salé Lavalette 210g">
+                </div>
+                <div>
+                    <span class="badge" data-i18n="wsProd1Badge">Épicerie Fine et Hôtellerie</span>
+                    <h3 data-i18n="wsProd1Title">Caramel au Beurre Salé - Format 210g</h3>
+                    <p data-i18n="wsProd1Desc">Destiné aux épiceries fines, concept stores, hôtels et coffrets gourmands. Présentation soignée sous la marque d'origine Lavalette.</p>
+                    <ul class="specs-list">
+                        <li><span data-i18n="wsFormatLabel">Format</span> <span class="highlight" data-i18n="wsFormat210">Pot en verre 210g</span></li>
+                        <li><span data-i18n="wsAgriLabel">Taux de matières agricoles</span> <span class="highlight">92,41%</span></li>
+                        <li><span data-i18n="specDdmLabel">Conservation (DDM)</span> <span class="highlight" data-i18n="specDdmVal">365 Jours</span></li>
+                        <li><span data-i18n="wsAvailLabel">Disponibilité</span> <span class="highlight" data-i18n="wsAvailVal">Sur commande / Expédition B2B</span></li>
+                    </ul>
+                    <a id="wsBtn1" href="mailto:lavalette.caramel@gmail.com?subject=Demande%20Catalogue%20Distribution%20-%20Pot%20210g" class="btn-primary" style="margin-top: 10px;" data-i18n="wsProd1Cta">
+                        Consulter les tarifs distributeurs
+                    </a>
+                </div>
+            </div>
+
+            <div class="gold-divider" style="margin: 60px auto; opacity: 0.2;"></div>
+
+            <!-- Format Seau 10kg -->
+            <div class="product-grid">
+                <div class="product-image">
+                    <img src="sceaux.png" alt="Seau Caramel au Beurre Salé Lavalette 10kg">
+                </div>
+                <div>
+                    <span class="badge" data-i18n="wsProd2Badge">Pâtisserie et Restauration</span>
+                    <h3 data-i18n="wsProd2Title">Caramel au Beurre Salé - Seau Pro 10kg</h3>
+                    <p data-i18n="wsProd2Desc">Conçu pour les artisans pâtissiers, chocolatiers, glaciers et cuisines gastronomiques. Texture onctueuse garantissant une tenue parfaite à chaud comme à froid.</p>
+                    <ul class="specs-list">
+                        <li><span data-i18n="wsFormatLabel">Format</span> <span class="highlight" data-i18n="wsFormat10kg">Seau hermétique 10kg</span></li>
+                        <li><span data-i18n="wsAgriLabel">Taux de matières agricoles</span> <span class="highlight">92,41%</span></li>
+                        <li><span data-i18n="specDdmLabel">Conservation (DDM)</span> <span class="highlight" data-i18n="specDdm180">180 Jours</span></li>
+                        <li><span data-i18n="wsUsageLabel">Application</span> <span class="highlight" data-i18n="wsUsageVal">Prêt à l'emploi (inserts, nappages, appareils)</span></li>
+                    </ul>
+                    <a id="wsBtn2" href="mailto:lavalette.caramel@gmail.com?subject=Demande%20Tarifs%20Format%20Pro%2010kg" class="btn-primary" style="margin-top: 10px;" data-i18n="wsProd2Cta">
+                        Contacter le pôle professionnel
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- SPÉCIFICATIONS TECHNIQUES (COMMUN) -->
     <section class="section">
-        <h2 class="centered">Technical Specifications</h2>
+        <h3 class="centered" data-i18n="techTitle">Spécifications Techniques et Ingrédients</h3>
         <div class="gold-divider"></div>
         <div class="tech-box">
             <div>
-                <h3>Ingredients</h3>
-                <p class="ingredients-text">
-                    Sugar, cream, water, <strong>BUTTER</strong> (2.4%), Guérande salt (1.2%). <br><br>
-                    <em>Allergen Info: Contains MILK products (butter, cream). May contain traces of gluten (wheat).</em>
+                <h4 data-i18n="techIngTitle">Ingrédients Nobles</h4>
+                <p class="ingredients-text" style="margin-top: 15px;" data-i18n="techIngText">
+                    Sucre, crème, eau, <strong>BEURRE</strong> (2,4%), sel de Guérande (1,2%). <br><br>
+                    <em>Informations allergènes : Contient des produits laitiers (lait, beurre, crème). Peut contenir d'éventuelles traces de gluten (blé).</em>
                 </p>
             </div>
             <div>
-                <h3>Nutrition (per 100g)</h3>
-                <table style="margin-top: 0; font-size: 0.8rem;">
-                    <tr><td>Energy</td><td>346 kcal / 1450 kJ</td></tr>
-                    <tr><td>Fat</td><td>14.0g (saturates: 10.0g)</td></tr>
-                    <tr><td>Carbohydrates</td><td>54.0g (sugars: 52.0g)</td></tr>
-                    <tr><td>Proteins</td><td>0.8g</td></tr>
-                    <tr><td>Salt</td><td>1.00g</td></tr>
+                <h4 data-i18n="techNutTitle">Valeurs Nutritionnelles (pour 100g)</h4>
+                <table style="margin-top: 10px; font-size: 0.85rem;">
+                    <tr><td data-i18n="nutEnergy">Énergie</td><td>346 kcal / 1450 kJ</td></tr>
+                    <tr><td data-i18n="nutFat">Matières grasses</td><td>14,0g (dont saturés : 10,0g)</td></tr>
+                    <tr><td data-i18n="nutCarb">Glucides</td><td>54,0g (dont sucres : 52,0g)</td></tr>
+                    <tr><td data-i18n="nutProt">Protéines</td><td>0,8g</td></tr>
+                    <tr><td data-i18n="nutSalt">Sel</td><td>1,00g</td></tr>
                 </table>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="centered">Partnership Terms 2026</h2>
-        <div class="gold-divider"></div>
-        <table>
-            <tr>
-                <th>Logistics</th>
-                <td>
-                    • Lead time: 8 business days.<br>
-                    • Quality claims must be filed upon receipt with clear evidence on transport documents.
-                </td>
-            </tr>
-            <tr>
-                <th>Payment & Pricing</th>
-                <td>
-                    • First Order: 50% Pro-forma payment required before shipping.<br>
-                    • Recurring Clients: 50% deposit at order / 50% upon receipt.
-                </td>
-            </tr>
-        </table>
-    </section>
-
-</div>
+</main>
 
 <footer>
-    <h2>Ready to partner?</h2>
-    <a href="mailto:lavalette.caramel@gmail.com" class="contact-btn">EMAIL US: lavalette.caramel@gmail.com</a>
-    <p style="margin-top: 15px;">+33 (0)7 68 78 11 10</p>
-    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">ZA de la Bourdinière - 5, rue du Verger - 22120 YFFINIAC, FRANCE</p>
+    <h2 data-i18n="footerTitle">Concrétiser un Projet ?</h2>
+    <p style="margin-bottom: 20px; font-size: 0.95rem; opacity: 0.9;" data-i18n="footerSub">Nous répondons à toutes les demandes professionnelles sous 24h.</p>
+    <a href="mailto:lavalette.caramel@gmail.com" class="btn-primary" style="background-color: var(--white); color: var(--dark-bronze);">
+        lavalette.caramel@gmail.com
+    </a>
+    <p style="margin-top: 25px; font-weight: 500;">+33 (0)7 68 78 11 10</p>
+    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">EMB 22393, FRANCE</p>
 </footer>
+
+<script>
+    // Dictionnaire bilingue
+    const translations = {
+        fr: {
+            langLabel: "Langue :",
+            slogan: "L'Artisanat Français au Service de l'Excellence",
+            navCustom: "Cadeaux d'Affaires et Sur-Mesure",
+            navWholesale: "Gamme Distribution Lavalette",
+            customBadge: "Marque Blanche et Événements",
+            customTitle: "Le Cadeau d'Entreprise Signé à Votre Image",
+            customDesc: "Marquez les esprits de vos clients, partenaires et collaborateurs avec une attention gastronomique raffinée. Nous façonnons nos pots de caramel au beurre salé artisanal sous l'effigie et l'identité visuelle de votre entreprise.",
+            customProdBadge: "Édition Personnalisée",
+            customProdTitle: "Pot Artisanal 210g Personnalisé",
+            customProdText: "Idéal pour vos séminaires, assemblées générales, coffrets de fin d'année ou cadeaux de fidélisation. L'étiquetage frontal est intégralement adapté avec votre logo, charte graphique et mot personnalisé.",
+            specFormatLabel: "Contenance",
+            specFormatVal: "Pot en verre 210g",
+            specRecipeLabel: "Recette",
+            specRecipeVal: "Beurre et Fleur de Sel de Guérande",
+            specDdmLabel: "Conservation (DDM)",
+            specDdmVal: "365 Jours",
+            specMoqLabel: "Commande minimale (MOQ)",
+            specMoqVal: "100 pots",
+            customCta: "Demander un devis sur-mesure",
+            customWhyTitle: "Pourquoi Choisir Lavalette Pour Vos Événements ?",
+            pillar1Title: "Artisanat Véritable",
+            pillar1Desc: "Une recette gastronomique bretonne pure, sans conservateur ni colorant. Une signature gustative authentique.",
+            pillar2Title: "Prestige et Image",
+            pillar2Desc: "Un contenant élégant en verre qui valorise l'image de votre société lors de vos remises de prix et séminaires.",
+            pillar3Title: "Accompagnement Graphique",
+            pillar3Desc: "Validation personnalisée de votre BAT étiquette pour un rendu visuel impeccable à vos couleurs.",
+            wsVisionBadge: "Offre Professionnelle",
+            wsVisionTitle: "La Vision Lavalette",
+            wsVisionDesc: "<strong>Lavalette Caramel</strong> redéfinit le standard d'excellence du caramel au beurre salé. Notre recette gastronomique est élaborée dans le respect du savoir-faire français, sans colorant ni conservateur, sublimée par l'authenticité de la fleur de sel de Guérande.",
+            wsCatalogTitle: "Sélection Distribution et Métiers de Bouche",
+            wsProd1Badge: "Épicerie Fine et Hôtellerie",
+            wsProd1Title: "Caramel au Beurre Salé - Format 210g",
+            wsProd1Desc: "Destiné aux épiceries fines, concept stores, hôtels et coffrets gourmands. Présentation soignée sous la marque d'origine Lavalette.",
+            wsFormatLabel: "Format",
+            wsFormat210: "Pot en verre 210g",
+            wsAgriLabel: "Taux de matières agricoles",
+            wsAvailLabel: "Disponibilité",
+            wsAvailVal: "Sur commande / Expédition B2B",
+            wsProd1Cta: "Consulter les tarifs distributeurs",
+            wsProd2Badge: "Pâtisserie et Restauration",
+            wsProd2Title: "Caramel au Beurre Salé - Seau Pro 10kg",
+            wsProd2Desc: "Conçu pour les artisans pâtissiers, chocolatiers, glaciers et cuisines gastronomiques. Texture onctueuse garantissant une tenue parfaite à chaud comme à froid.",
+            wsFormat10kg: "Seau hermétique 10kg",
+            specDdm180: "180 Jours",
+            wsUsageLabel: "Application",
+            wsUsageVal: "Prêt à l'emploi (inserts, nappages, appareils)",
+            wsProd2Cta: "Contacter le pôle professionnel",
+            techTitle: "Spécifications Techniques et Ingrédients",
+            techIngTitle: "Ingrédients Nobles",
+            techIngText: "Sucre, crème, eau, <strong>BEURRE</strong> (2,4%), sel de Guérande (1,2%). <br><br><em>Informations allergènes : Contient des produits laitiers (lait, beurre, crème). Peut contenir d'éventuelles traces de gluten (blé).</em>",
+            techNutTitle: "Valeurs Nutritionnelles (pour 100g)",
+            nutEnergy: "Énergie",
+            nutFat: "Matières grasses",
+            nutCarb: "Glucides",
+            nutProt: "Protéines",
+            nutSalt: "Sel",
+            footerTitle: "Concrétiser un Projet ?",
+            footerSub: "Nous répondons à toutes les demandes professionnelles sous 24h."
+        },
+        en: {
+            langLabel: "Language:",
+            slogan: "French Craftsmanship at the Service of Pleasure",
+            navCustom: "Corporate Gifting and Bespoke",
+            navWholesale: "Lavalette Wholesale Selection",
+            customBadge: "White Label and Corporate Events",
+            customTitle: "Artisanal Gifting Tailored To Your Brand",
+            customDesc: "Impress your clients, executive partners, and teams with an authentic gourmet French gift. We customize our artisanal salted butter caramel jars directly under your company's branding.",
+            customProdBadge: "Bespoke Edition",
+            customProdTitle: "Custom 210g Artisanal Jar",
+            customProdText: "Designed for corporate seminars, client onboarding, annual celebrations, and luxury gifting boxes. The frontal label is fully adapted to incorporate your company logo and dedicated event message.",
+            specFormatLabel: "Format",
+            specFormatVal: "210g Glass Jar",
+            specRecipeLabel: "Recipe",
+            specRecipeVal: "French Butter and Guérande Salt",
+            specDdmLabel: "Shelf Life (DDM)",
+            specDdmVal: "365 Days",
+            specMoqLabel: "Minimum Order (MOQ)",
+            specMoqVal: "100 jars",
+            customCta: "Request a Custom Quote",
+            customWhyTitle: "Why Choose Lavalette For Your Corporate Events?",
+            pillar1Title: "Authentic Craftsmanship",
+            pillar1Desc: "Pure traditional Breton recipe without artificial coloring or preservatives. A genuine gastronomic statement.",
+            pillar2Title: "Executive Brand Image",
+            pillar2Desc: "Sophisticated glass jar presentation that elevates your corporate identity during executive gatherings.",
+            pillar3Title: "Bespoke Design Support",
+            pillar3Desc: "Tailored proofing of your jar label to ensure pristine visual execution under your exact guidelines.",
+            wsVisionBadge: "Professional Offer",
+            wsVisionTitle: "The Lavalette Vision",
+            wsVisionDesc: "<strong>Lavalette Caramel</strong> is setting a new standard for exceptional salted butter caramel. Our gourmet recipe is crafted without food coloring or preservatives, combining traditional French expertise with authentic Guérande sea salt.",
+            wsCatalogTitle: "Wholesale and Culinary Selection",
+            wsProd1Badge: "Fine Delicatessen and Hospitality",
+            wsProd1Title: "Salted Butter Caramel - 210g Jar",
+            wsProd1Desc: "Tailored for fine food stores, specialty groceries, boutique hotels, and luxury gift baskets under the original Lavalette brand.",
+            wsFormatLabel: "Format",
+            wsFormat210: "210g Glass Jar",
+            wsAgriLabel: "Agricultural Content",
+            wsAvailLabel: "Availability",
+            wsAvailVal: "B2B Order / Export Ready",
+            wsProd1Cta: "Request Distributor Pricing",
+            wsProd2Badge: "Pastry and Foodservice",
+            wsProd2Title: "Salted Butter Caramel - 10kg Bucket",
+            wsProd2Desc: "Designed for premium pastry chefs, chocolatiers, and culinary artisans. Smooth texture ensuring flawless stability across hot and cold applications.",
+            wsFormat10kg: "10kg Food-grade Bucket",
+            specDdm180: "180 Days",
+            wsUsageLabel: "Application",
+            wsUsageVal: "Ready-to-use (fillings, toppings, glazes)",
+            wsProd2Cta: "Contact Foodservice Division",
+            techTitle: "Technical Specifications and Ingredients",
+            techIngTitle: "Noble Ingredients",
+            techIngText: "Sugar, cream, water, <strong>BUTTER</strong> (2.4%), Guérande salt (1.2%). <br><br><em>Allergen Info: Contains MILK products (butter, cream). May contain traces of gluten (wheat).</em>",
+            techNutTitle: "Nutrition (per 100g)",
+            nutEnergy: "Energy",
+            nutFat: "Fat",
+            nutCarb: "Carbohydrates",
+            nutProt: "Proteins",
+            nutSalt: "Salt",
+            footerTitle: "Ready to partner?",
+            footerSub: "We answer all professional inquiries within 24 hours."
+        }
+    };
+
+    // Changement d'onglets
+    function openTab(tabName) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById('tab-' + tabName).classList.add('active');
+        document.getElementById('tab-' + tabName + '-btn').classList.add('active');
+    }
+
+    // Gestion de la langue (fixe & dynamique)
+    function setLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+
+        // Mise à jour de tous les textes
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key]) {
+                el.innerHTML = t[key];
+            }
+        });
+
+        // Mise à jour de l'état actif des boutons langue
+        document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+        // Adaptation des liens mailto
+        const customBtn = document.getElementById('customQuoteBtn');
+        if (lang === 'en') {
+            customBtn.href = "mailto:lavalette.caramel@gmail.com?subject=Inquiry%20-%20Custom%20Corporate%20Jars&body=Hello%20Lavalette%20Team%2C%0A%0AWe%20would%20like%20to%20request%20a%20quotation%20for%20customized%20caramel%20jars%3A%0A%0A-%20Company%20Name%3A%0A-%20Estimated%20Quantity%20(min.%20100)%3A%0A-%20Target%20Delivery%20Date%20%2F%20Event%3A%0A-%20Contact%20Details%3A%0A%0AThank%20you!";
+            document.getElementById('wsBtn1').href = "mailto:lavalette.caramel@gmail.com?subject=Wholesale%20Inquiry%20-%20210g%20Jars";
+            document.getElementById('wsBtn2').href = "mailto:lavalette.caramel@gmail.com?subject=Foodservice%20Inquiry%20-%2010kg%20Bucket";
+            document.documentElement.lang = "en";
+        } else {
+            customBtn.href = "mailto:lavalette.caramel@gmail.com?subject=Demande%20de%20devis%20-%20Pots%20Personnalis%C3%A9s&body=Bonjour%20Maison%20Lavalette%2C%0A%0ANous%20souhaitons%20obtenir%20un%20devis%20pour%20des%20pots%20de%20caramel%20personnalis%C3%A9s%20%3A%0A%0A-%20Nom%20de%20l'entreprise%20%3A%0A-%20Quantit%C3%A9%20estim%C3%A9e%20(min.%20100)%20%3A%0A-%20Date%20souhait%C3%A9e%20de%20livraison%20%2F%20%C3%89v%C3%A9nement%20%3A%0A-%20Coordonn%C3%A9es%20de%20contact%20%3A%0A%0AMerci%20!";
+            document.getElementById('wsBtn1').href = "mailto:lavalette.caramel@gmail.com?subject=Demande%20Catalogue%20Distribution%20-%20Pot%20210g";
+            document.getElementById('wsBtn2').href = "mailto:lavalette.caramel@gmail.com?subject=Demande%20Tarifs%20Format%20Pro%2010kg";
+            document.documentElement.lang = "fr";
+        }
+
+        // Sauvegarde dans le navigateur
+        localStorage.setItem('lavalette_lang', lang);
+    }
+
+    // Chargement de la préférence au démarrage (par défaut FR)
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('lavalette_lang') || 'fr';
+        setLanguage(savedLang);
+    });
+</script>
 
 </body>
 </html>
