@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lavalette-brand.vercel.app/sitemap.xml
+Sitemap: https://www.lavalettecaramel.com/sitemap.xml
